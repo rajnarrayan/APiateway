@@ -1,0 +1,39 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Auth",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+         
+          "Port": 9000
+        }
+      ],
+     
+      "UpstreamPathTemplate": "/api/Auth",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/WeatherForecast",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",          
+          "Port": 9100
+        }
+      ],
+      "UpstreamPathTemplate": "/api/WeatherForecast",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+   
+
+  }
+}
